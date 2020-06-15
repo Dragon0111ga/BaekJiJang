@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "298764906307",
+    "firebase_url": "https://baekjijang.firebaseio.com",
+    "project_id": "baekjijang",
+    "storage_bucket": "baekjijang.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298764906307:android:656da00c25cd61318089f6",
+        "android_client_info": {
+          "package_name": "com.dragon0111ga.baekjijang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "298764906307-2jicq3s1m2get4447hg69k1lt6hmr5d8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJHLJURsg6UYrfoQsbuk31qQ52v9Znwwk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "298764906307-2jicq3s1m2get4447hg69k1lt6hmr5d8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
