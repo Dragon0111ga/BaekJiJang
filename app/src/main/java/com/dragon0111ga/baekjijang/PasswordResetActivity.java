@@ -19,7 +19,7 @@ public class PasswordResetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password_reset);
-
+        mAuth = FirebaseAuth.getInstance();
         findViewById(R.id.pwChangeButton).setOnClickListener(onClickListener);
     }
 
