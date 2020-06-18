@@ -1,14 +1,14 @@
 package com.dragon0111ga.baekjijang;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -16,30 +16,35 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class SignUpActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth; // Firebase 인증
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_login);
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        findViewById(R.id.signUpButton).setOnClickListener(onClickListener);
-        findViewById(R.id.gotoLogInButton).setOnClickListener(onClickListener);
+        findViewById(R.id.logInButton).setOnClickListener(onClickListener);
+        findViewById(R.id.gotoSignUpButton).setOnClickListener(onClickListener);
+        findViewById(R.id.gotoPwChangeButton).setOnClickListener(onClickListener);
     }
 
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             switch (v.getId()){
-                case R.id.signUpButton:
-                    signUp();
+                case R.id.logInButton:
+                    logIn();
                     break;
-                case R.id.gotoLogInButton:
-                    startLoginActivity();
+                case R.id.gotoSignUpButton:
+                    startSignUpActivity();
+                    break;
+                case R.id.gotoPwChangeButton:
+                    //showToast("아직 구현하지 못함");
+                    startPasswordResetActivity();
                     break;
                 default:
                     break;
@@ -47,39 +52,30 @@ public class SignUpActivity extends AppCompatActivity {
         }
     };
 
-    private void signUp()
+    public void logIn()
     {
         String email = ((EditText)findViewById(R.id.editTextTextEmailAddress)).getText().toString();
         String password = ((EditText)findViewById(R.id.editTextTextPassword)).getText().toString();
-        String passwordCheck = ((EditText)findViewById(R.id.editTextTextPasswordCheck)).getText().toString();
 
-        if (email.length() > 0 && password.length() > 0 && passwordCheck.length() > 0){ //공란 찾기
-            if (password.equals(passwordCheck)) //비밀번호 확인 체크
-            {
-                mAuth.createUserWithEmailAndPassword(email, password)
+        if (email.length() > 0 && password.length() > 0){ //공란 찾기
+                mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     FirebaseUser user = mAuth.getCurrentUser();
-                                    showToast("회원가입에 성공하였습니다.");
-                                    startLoginActivity();
-                                    finish();
+                                    showToast("로그인 성공");
+                                    startMainActivity();
                                     //성공 UI
                                 } else {
-                                    // If sign in fails, display a message to the user.
+                                    showToast("로그인 실패");
                                     if (task.getException() != null){
                                         showToast(task.getException().toString()); //시간남으면 예외처리 switch로 toast쏘기!
                                     }
-                                    //실패 UI
                                 }
-
-                                // ...
                             }
                         });
-            }else{
-                showToast("비밀번호 확인이 일치하지 않습니다.");
-            }
+
         }else {
             showToast("이메일 또는 비밀번호를 확인해주세요.");
         }
@@ -91,21 +87,37 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void showToast(String msg)
     {
-      Toast.makeText(SignUpActivity.this, msg, Toast.LENGTH_SHORT).show();
+        Toast.makeText(LoginActivity.this, msg, Toast.LENGTH_SHORT).show();
     }
-    private void startLoginActivity()
+
+    //범용적으로 쓸수 있는 방법 알아보기..
+//    private  void startMyActivity(Class c){ //Class로 범용적으로 쓰지 말라고 안되는듯... Activity로 해서 .Getclass했는데 될리가 없다..
+//        onPause();
+//        Intent intent= new Intent(this,c);
+//        startActivity(intent);
+//    }
+    private void startSignUpActivity()
     {
         onPause();
-        Intent intent= new Intent(this,LoginActivity.class);
+        Intent intent= new Intent(this,SignUpActivity.class);
+        startActivity(intent);
+    }
+    private void startPasswordResetActivity()
+    {
+        onPause();
+        Intent intent= new Intent(this,PasswordResetActivity.class);
+        startActivity(intent);
+    }
+    private void startMainActivity()
+    {
+        onPause();
+        Intent intent= new Intent(this,MainActivity.class);
         startActivity(intent);
     }
     @Override
-    public void onPause() { //뒤로가기 눌렀을 때 다시 화면 뜨는거 방지
-        super.onPause(); //Activity 멈추기
-        finish(); //Activity 종료
-        //https://hashcode.co.kr/questions/1885/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%95%A1%ED%8B%B0%EB%B9%84%ED%8B%B0-%EC%A2%85%EB%A3%8C
+    public void onPause() {
+        super.onPause();
+        // Remove the activity when its off the screen
+        finish();
     }
-
-
-
 }

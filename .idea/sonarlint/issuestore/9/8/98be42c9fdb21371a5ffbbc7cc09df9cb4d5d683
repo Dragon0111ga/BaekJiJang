@@ -1,14 +1,7 @@
 
-M
-java:S1481"0Remove this unused "currentUser" local variable.(ÀÇ¾‘8ƒ­¹–¨.
-C	java:S131+""Add a default case to this switch.(×“¾ñùÿÿÿÿ8œÒ…Ë§.
-m
-java:S1301+"KReplace this "switch" statement by "if" statements to increase readability.(×“¾ñùÿÿÿÿ8œÒ…Ë§.
-Z
-java:S1854>"8Remove this useless assignment to local variable "user".(©Í”äýÿÿÿÿ8Ê­Æ“¨.
 K
-java:S1481>")Remove this unused "user" local variable.(©Í”äýÿÿÿÿ8Ê­Æ“¨.
-\
-java:S1854"?Remove this useless assignment to local variable "currentUser".(ÀÇ¾‘8ƒ­¹–¨.
-[
-java:S33983">Move this method into the anonymous class declared at line 40.(Œ‘Ãë8Ê­Æ“¨.
+java:S1481H")Remove this unused "user" local variable.(©Í”äýÿÿÿÿ8ôÒ³Å«.
+M
+java:S1481"0Remove this unused "currentUser" local variable.(ÀÇ¾‘8ƒ­¹–¨.
+o
+java:S3776:"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Œ‘Ãë8Ü¾´¼«.
