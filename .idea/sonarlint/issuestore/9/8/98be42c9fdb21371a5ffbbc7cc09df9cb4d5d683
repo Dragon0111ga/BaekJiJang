@@ -1,7 +1,10 @@
 
+O
+java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8ùšŠÂ¬.
+X	java:S125B"<This block of commented-out lines of code should be removed.(¾Ÿü¤8¹«¸Å¬.
 K
-java:S1481H")Remove this unused "user" local variable.(©Í”äýÿÿÿÿ8ôÒ³Å«.
-M
-java:S1481"0Remove this unused "currentUser" local variable.(ÀÇ¾‘8ƒ­¹–¨.
+java:S1481@")Remove this unused "user" local variable.(©Í”äýÿÿÿÿ8ôÒ³Å«.
 o
-java:S3776:"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Œ‘Ãë8Ü¾´¼«.
+java:S37762"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Œ‘Ãë8Ü¾´¼«.
+S
+java:S1144f"6Remove this unused private "startMainActivity" method.(øÆÊ‰8Âê¸Å¬.

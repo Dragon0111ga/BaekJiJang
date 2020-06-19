@@ -17,15 +17,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
-    private FirebaseAuth mAuth; // Firebase 인증
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance(); // Firebase 인증
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        // Initialize Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null){
+            startMainActivity();
+        }
 
         findViewById(R.id.logInButton).setOnClickListener(onClickListener);
         findViewById(R.id.gotoSignUpButton).setOnClickListener(onClickListener);
@@ -43,7 +44,6 @@ public class LoginActivity extends AppCompatActivity {
                     startSignUpActivity();
                     break;
                 case R.id.gotoPwChangeButton:
-                    //showToast("아직 구현하지 못함");
                     startPasswordResetActivity();
                     break;
                 default:
@@ -91,27 +91,27 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     //범용적으로 쓸수 있는 방법 알아보기..
-//    private  void startMyActivity(Class c){ //Class로 범용적으로 쓰지 말라고 안되는듯... Activity로 해서 .Getclass했는데 될리가 없다..
+//    private  void startMyActivity(Class c){ //Class로 크게? 쓰지 말라고 안되는듯... Activity로 해서 .Getclass했는데 될리가 없다..
 //        onPause();
 //        Intent intent= new Intent(this,c);
 //        startActivity(intent);
 //    }
     private void startSignUpActivity()
     {
-        onPause();
         Intent intent= new Intent(this,SignUpActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
     private void startPasswordResetActivity()
     {
-        onPause();
         Intent intent= new Intent(this,PasswordResetActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
     private void startMainActivity()
     {
-        onPause();
         Intent intent= new Intent(this,MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
     @Override

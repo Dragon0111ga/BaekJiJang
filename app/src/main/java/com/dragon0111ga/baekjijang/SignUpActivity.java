@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -63,15 +62,12 @@ public class SignUpActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     showToast("회원가입에 성공하였습니다.");
-                                    startLoginActivity();
-                                    finish();
-                                    //성공 UI
+                                    startMainActivity();
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     if (task.getException() != null){
                                         showToast(task.getException().toString()); //시간남으면 예외처리 switch로 toast쏘기!
                                     }
-                                    //실패 UI
                                 }
 
                                 // ...
@@ -91,12 +87,18 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void showToast(String msg)
     {
-      Toast.makeText(SignUpActivity.this, msg, Toast.LENGTH_SHORT).show();
+        Toast.makeText(SignUpActivity.this, msg, Toast.LENGTH_SHORT).show();
     }
     private void startLoginActivity()
     {
-        onPause();
         Intent intent= new Intent(this,LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+    private void startMainActivity()
+    {
+        Intent intent= new Intent(this,MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
     @Override

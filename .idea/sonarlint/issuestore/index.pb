@@ -3,10 +3,6 @@ o
 ?app/src/main/java/com/dragon0111ga/baekjijang/MainActivity.java,0\a\0a9422507761714c6c332c5f67ba72e8ddb304d8
 Å
 Qapp/src/androidTest/java/com/dragon0111ga/baekjijang/ExampleInstrumentedTest.java,f\6\f63139fd0d8935b49ccb3a0029a046391dc8a681
-d
-4app/src/main/res/drawable/ic_launcher_background.xml,4\9\49845c622cb06d895975c7b1e3f943e320bce688
-h
-8app/src/main/res/drawable-v24/ic_launcher_foreground.xml,0\7\078508c831007ccb3938b355f0d30a8368f99a8d
 h
 8app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml,6\e\6ec7d34b130497a10dc92abcde9b313d370a89df
 P
@@ -44,3 +40,13 @@ X
 gradlew.bat,2\a\2a45a911a8f1836b0b6c5b758962572012d8f8c3
 p
 @app/src/main/java/com/dragon0111ga/baekjijang/LoginActivity.java,3\7\371679c626b2469c0937d550ef2d8a1c01750223
+N
+app/src/main/res/font/font.xml,b\6\b6f6bdc101d406059b11d13134e008cb1069f317
+R
+"app/src/main/res/font-v26/font.xml,2\c\2c6f48359293851bc71e329320aea9b90cc79412
+R
+"app/src/main/res/values/colors.xml,9\6\969faa2a5d9f5e8390e958d2c07f2cfd54676e6b
+R
+"app/src/main/res/values/styles.xml,f\7\f79cc2688e29fcbc286fda14ae07b27c9e83690f
+x
+Happ/src/main/java/com/dragon0111ga/baekjijang/PasswordResetActivity.java,e\8\e8035cd7b191a377622f510627ba2e09bf065775
