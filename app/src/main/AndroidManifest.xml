@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dragon0111ga.baekjijang">
-    <!-- 인터넷 -->
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:screenOrientation="portrait">
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,8 +27,12 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".PasswordResetActivity" />
         <activity android:name=".UserInfoActivity" />
+        <activity android:name=".WritePostActivity" />
+        <activity android:name=".WriteSubjectivePostActivity" />
+        <activity android:name=".WriteMultipleChoicePostActivity" />
+        <activity android:name=".WriteAlternativePostActivity" />
+
     </application>
 
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|left"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/backtomainButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:paddingLeft="10dp"
+            android:paddingBottom="7dp"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24"
+             />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:fontFamily="@font/ibmplexsanskrbold"
+            android:gravity="bottom|start"
+            android:paddingLeft="10dp"
+            android:paddingRight="20dp"
+            android:text="질문하기"
+            android:textColor="@color/pointmagic"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/ibmplexsanskrmedium"
+            android:text="양자택일" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/editTextTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="제목"
+            android:inputType="textPersonName"
+            android:textColorHint="#939393"
+            android:privateImeOptions="defaultInputmode=korean"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/editTextContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@null"
+                    android:gravity="start|top"
+                    android:hint="여기를 눌러서 질문을 작성하세요!"
+                    android:inputType="textMultiLine"
+                    android:privateImeOptions="defaultInputmode=korean"
+                    android:textColorHint="#919191" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/alternative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextChose1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="보기 1"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textViewVS"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/ibmplexsanskrbold"
+                android:gravity="center"
+                android:text="VS" />
+
+            <EditText
+                android:id="@+id/editTextChose2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="보기 2"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/UploadButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/pointsky"
+            android:fontFamily="@font/ibmplexsanskrsemibold"
+            android:text="올리기"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

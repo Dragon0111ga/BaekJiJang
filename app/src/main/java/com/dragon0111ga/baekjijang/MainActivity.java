@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViewById(R.id.logOutButton).setOnClickListener(onClickListener);
+        findViewById(R.id.floatingActionButton).setOnClickListener(onClickListener);
         if(user == null){
             startLoginActivity();
         }else {
@@ -67,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
                     showToast("로그아웃");
                     startLoginActivity();
                     break;
+                case R.id.floatingActionButton:
+                    startWritePostActivity();
+                    break;
                 default:
                     break;
             }
@@ -81,9 +85,14 @@ public class MainActivity extends AppCompatActivity {
         Intent intent= new Intent(this,LoginActivity.class);
         startActivity(intent);
     }
+    private void startWritePostActivity()
+    {
+        Intent intent= new Intent(this,WritePostActivity.class);
+        startActivity(intent);
+    }
     private void startUserInfoActivity()
     {
-        Intent intent= new Intent(this,UserInfoActivity.class);
+        Intent intent= new Intent(this,WritePostActivity.class);
         startActivity(intent);
     }
 

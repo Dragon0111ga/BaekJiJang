@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|left"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/backtomainButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:paddingLeft="10dp"
+            android:paddingBottom="7dp"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24"
+             />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:fontFamily="@font/ibmplexsanskrbold"
+            android:gravity="bottom|start"
+            android:paddingLeft="10dp"
+            android:paddingRight="20dp"
+            android:text="질문하기"
+            android:textColor="@color/pointmagic"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/ibmplexsanskrmedium"
+            android:text="질문 유형 고르기" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/ibmplexsanskrmedium"
+            android:text="둘 중 하나를 골라야해!"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/gotoWriteAlternativeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/pointsky"
+            android:text="양자택일 질문하기" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/ibmplexsanskrmedium"
+            android:text="3개 이상 중 하나를 골라야해!"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/gotoWriteMultipleChoiceButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/pointsky"
+            android:text="객관식 질문하기" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/ibmplexsanskrmedium"
+            android:text="개인의 긴 조언이 필요해!"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/gotoWriteSubjectiveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/pointsky"
+            android:text="주관식 질문하기" />
+
+    </LinearLayout>
+
+</LinearLayout>
