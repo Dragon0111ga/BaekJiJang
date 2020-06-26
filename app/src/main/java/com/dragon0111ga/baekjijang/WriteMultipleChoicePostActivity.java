@@ -67,6 +67,7 @@ public class WriteMultipleChoicePostActivity extends AppCompatActivity {
             choiceEditTextParams.setMargins(4, 4, 4, 4);
             choiceEditText.setLayoutParams(choiceEditTextParams);
 
+            choiceEditText.setEms(10);
             choiceEditText.setHint("선택 "+ num);
             choiceEditText.setBackgroundColor(0X004DA8A4FF); // #4DA8A4FF
             choiceEditText.setPadding(3,3,3,3);
